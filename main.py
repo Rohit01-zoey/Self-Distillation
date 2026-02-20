@@ -57,7 +57,7 @@ if __name__ == "__main__":
         torch_dtype=torch.bfloat16,
     )
     tokenizer = AutoTokenizer.from_pretrained(args.model_name)
-    dataset = load_tooluse_dataset(args.seed)
+    dataset, _ = load_tooluse_dataset(args.seed)
 
     config = DistilConfig(
         seed=args.seed,
