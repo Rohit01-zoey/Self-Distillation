@@ -399,7 +399,6 @@ class DistilTrainer(BaseTrainer):
         # Reference model
         self.beta = args.beta
         self.alpha = args.alpha
-        self.full_logit_distillation = args.full_logit_distillation
         self.generate_from_teacher = args.generate_from_teacher
         if ref_model is not None:
             # If a reference model is provided, use it
