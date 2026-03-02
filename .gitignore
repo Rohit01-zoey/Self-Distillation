@@ -6,3 +6,6 @@ wandb/
 results/
 bsub_outputs/
 .hyperparameter_search_scripts_main/
+
+trial/
+duke_bash_logs/
