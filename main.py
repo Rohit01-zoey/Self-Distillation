@@ -36,9 +36,13 @@ $output_text
 Now answer with a response of your own, including the thinking process.
 """)
 
+        golden_text = "\n".join(example["golden_response"])
         return {
-            "prompt": [{"role": "user", "content": example['prompt']}],
-            "teacher_prompt": [{"role": "user", "content": teacher_prompt.substitute(orig_content=example['prompt'], output_text='\n'.join(example['golden_response']))}],
+            "prompt": [{"role": "user", "content": example["prompt"]}],
+            "teacher_prompt": [
+                {"role": "user", "content": teacher_prompt.substitute(orig_content=example["prompt"], output_text=golden_text)},
+            ],
+            "golden_completion": golden_text,
         }
     
     train_dataset = train_dataset.map(format_example, remove_columns=train_dataset.column_names)
